@@ -1,0 +1,257 @@
+
+afs_chmod.cc,20
+int sfs_chmod 6,81
+
+afs_chown.cc,20
+int sfs_chown 5,61
+
+afs_create.cc,22
+int sfs_create 7,100
+
+afs_getattr.cc,23
+int sfs_getattr 7,144
+
+afs_link.cc,19
+int sfs_link 7,82
+
+afs_main.cc,102
+using std::cout;6,118
+using std::endl;7,135
+HDD hd{hd9,153
+file_t& ROOT 10,202
+int main 31,1481
+
+afs_mkdir.cc,22
+int  sfs_mkdir(7,119
+
+afs_open.cc,19
+int sfs_open 6,81
+
+afs_read.cc,21
+int sfs_read 11,184
+
+afs_readdir.cc,23
+int sfs_readdir 7,119
+
+afs_readlink.cc,24
+int sfs_readlink 8,137
+
+afs_release.cc,22
+int sfs_release 5,61
+
+afs_rename.cc,23
+int sfs_rename 12,310
+
+afs_rmdir.cc,21
+int sfs_rmdir(7,102
+
+afs_symlink.cc,23
+int sfs_symlink(8,164
+
+afs_truncate.cc,23
+int sfs_truncate 5,61
+
+afs_unlink.cc,21
+int sfs_unlink 6,81
+
+afs_write.cc,22
+int sfs_write 10,167
+
+file_t.cc,336
+inode_t::inode_t(19,309
+inode_t::inode_t(29,532
+file_t::file_t(38,740
+bool file_t::isSymlink(50,1181
+int file_t::find(55,1360
+int  file_t::find(77,2250
+void file_t::add(117,3873
+void file_t::add(123,4045
+bool file_t::isDirectory(136,4443
+bool inode_t::check_permission(144,4547
+  std::list<unsigned int> HDD::search(150,4678
+
+file_t.hpp,4085
+#define FUSE_USE_VERSION 1,0
+#define UNUSED 2,28
+constexpr uint64_t num_blocks 23,463
+enum class block_type 25,508
+enum class block_type : uint8_t { free,block_type::free25,508
+enum class block_type : uint8_t { free, data,block_type::data25,508
+enum class block_type : uint8_t { free, data, inode,block_type::inode25,508
+enum class block_type : uint8_t { free, data, inode, superblock,block_type::superblock25,508
+enum class block_type : uint8_t { free, data, inode, superblock,file}block_type::file25,508
+struct superblock_t27,580
+    boost::container::static_vector<superblock_t::boost::container::static_vector29,602
+    boost::container::static_vector<uint32_t,124> files;superblock_t::files29,602
+    static constexpr block_type tag superblock_t::tag30,659
+struct inode_t34,726
+    boost::container::static_vector<inode_t::boost::container::static_vector38,790
+    boost::container::static_vector<uint32_t,94> index_file;inode_t::index_file38,790
+    static constexpr block_type tag inode_t::tag39,851
+    size_t size;inode_t::size40,908
+    int usecount;inode_t::usecount41,925
+    std::chrono::time_point<std::chrono::system_clock> ctime,inode_t::ctime42,943
+    std::chrono::time_point<std::chrono::system_clock> ctime, atime,inode_t::atime42,943
+    std::chrono::time_point<std::chrono::system_clock> ctime, atime, mtime;inode_t::mtime42,943
+    uid_t uid;inode_t::uid43,1019
+    gid_t gid;inode_t::gid44,1034
+    int readcount,inode_t::readcount45,1053
+    int readcount, writecount;inode_t::writecount45,1053
+    std::condition_variable cond;inode_t::cond46,1084
+    int link;inode_t::link47,1118
+struct data_t54,1345
+    boost::container::static_vector<data_t::boost::container::static_vector57,1436
+    boost::container::static_vector<char,496> data;data_t::data57,1436
+    static constexpr block_type tag data_t::tag59,1521
+class FileExists{FileExists63,1595
+enum class file_type:file_type64,1615
+enum class file_type: uint8_t {F,file_type::F64,1615
+enum class file_type: uint8_t {F,D}file_type::D64,1615
+struct file_t 66,1653
+    static constexpr block_type tag file_t::tag68,1670
+    int inode;file_t::inode69,1726
+    file_type type;file_t::type70,1741
+    std::string name;file_t::name71,1761
+    mode_t mode;file_t::mode72,1783
+    bool is_symlink;file_t::is_symlink73,1802
+    std::mutex mutex;file_t::mutex74,1823
+    std::condition_variable cond;file_t::cond75,1845
+    ~file_t(file_t::~file_t87,2318
+template< typename Type,92,2413
+template< typename Type, std::size_t ExpectedSize,92,2413
+template< typename Type, std::size_t ExpectedSize, std::size_t ActualSize 92,2413
+template< typename Type,99,2649
+  : validate_size<validate_size101,2773
+template<typename T,106,2935
+template<typename T, size_t s 106,2935
+struct has_tag<T, 0> : std::false_type 115,3348
+bool has_tag_v 119,3414
+template<typename T,121,3511
+template<typename T, std::enable_if_t<std::enable_if_t121,3511
+block_type tag_v<tag_v127,3733
+template<typename T,131,3812
+constexpr bool is_one_of_v 132,3852
+struct block_t 143,4369
+    static constexpr uint16_t block_size block_t::block_size145,4419
+    block_type tag;block_t::tag148,4512
+    static constexpr uint16_t obj_size block_t::obj_size151,4562
+	superblock_t superblock;block_t::superblock156,4748
+	inode_t inode;block_t::inode157,4774
+	data_t data;block_t::data158,4790
+        file_t file;block_t::file159,4804
+	std::array<block_t::std::array160,4825
+	std::array<uint8_t,obj_size> pad;block_t::pad160,4825
+    block_t(block_t::block_t164,4892
+    ~block_t(block_t::~block_t189,5590
+    block_t(block_t::block_t212,6075
+    template <typename T,block_t::T216,6216
+    std::enable_if_t<block_t::std::enable_if_t217,6260
+		     T&> change_type(block_t::change_type219,6340
+ #define getter(227,6641
+struct HDD246,7368
+    std::array<HDD::std::array249,7389
+    std::array<block_t,num_blocks> blocks;HDD::blocks249,7389
+    superblock_t& superblock;HDD::superblock251,7437
+    HDD(HDD::HDD254,7475
+
+/usr/include/fuse/fuse.h,3503
+#define _FUSE_H_10,216
+#define FUSE_USE_VERSION 23,599
+typedef int (*fuse_fill_dir_t)fuse_fill_dir_t58,1432
+typedef struct fuse_dirhandle *fuse_dirh_t;fuse_dirh_t62,1577
+typedef int (*fuse_dirfil_t)fuse_dirfil_t63,1621
+struct fuse_operations 88,2647
+	int (*getattr)getattr95,2867
+	int (*readlink)readlink105,3240
+	int (*getdir)getdir108,3331
+	int (*mknod)mknod116,3603
+	int (*mkdir)mkdir124,3865
+	int (*unlink)unlink127,3926
+	int (*rmdir)rmdir130,3985
+	int (*symlink)symlink133,4047
+	int (*rename)rename136,4116
+	int (*link)link139,4199
+	int (*chmod)chmod142,4288
+	int (*chown)chown145,4372
+	int (*truncate)truncate148,4451
+	int (*utime)utime154,4599
+	int (*open)open173,5321
+	int (*read)read186,5795
+	int (*write)write197,6133
+	int (*statfs)statfs207,6424
+	int (*flush)flush232,7464
+	int (*release)release248,8058
+	int (*fsync)fsync257,8296
+	int (*setxattr)setxattr260,8389
+	int (*getxattr)getxattr263,8496
+	int (*listxattr)listxattr266,8593
+	int (*removexattr)removexattr269,8679
+	int (*opendir)opendir281,9086
+	int (*readdir)readdir304,9949
+	int (*releasedir)releasedir311,10104
+	int (*fsyncdir)fsyncdir320,10352
+	void *(*init)init332,10667
+	void (*destroy)destroy341,10817
+	int (*access)access354,11137
+	int (*create)create368,11501
+	int (*ftruncate)ftruncate382,11924
+	int (*fgetattr)fgetattr396,12340
+	int (*lock)lock430,13740
+	int (*utimens)utimens444,14098
+	int (*bmap)bmap454,14374
+	unsigned int flag_nullpath_ok:flag_nullpath_ok466,14817
+	unsigned int flag_nopath:flag_nopath480,15318
+	unsigned int flag_utime_omit_ok:flag_utime_omit_ok486,15476
+	unsigned int flag_reserved:flag_reserved491,15553
+	int (*ioctl)ioctl505,16004
+	int (*poll)poll525,16659
+	int (*write_buf)write_buf536,17001
+	int (*read_buf)read_buf555,17672
+	int (*flock)flock577,18432
+	int (*fallocate)fallocate589,18838
+struct fuse_context 598,19072
+	struct fuse *fuse;fuse600,19129
+	uid_t uid;603,19189
+	gid_t gid;606,19242
+	pid_t pid;609,19296
+	void *private_data;private_data612,19341
+	mode_t umask;615,19428
+#define fuse_main(645,20439
+struct fuse_module 917,29866
+	const char *name;name921,29920
+	struct fuse_fs *(*factory)factory937,30392
+	struct fuse_module *next;next940,30475
+	struct fusemod_so *so;so941,30502
+	int ctr;942,30526
+#define FUSE_REGISTER_MODULE(959,30857
+typedef void (*fuse_processor_t)fuse_processor_t976,31502
+#  undef fuse_main1013,32847
+#    define fuse_main(1015,32895
+#    define fuse_new 1017,32994
+#    define fuse_setup 1018,33033
+#    define fuse_teardown 1019,33076
+#    define fuse_operations 1020,33125
+#    define fuse_main(1022,33209
+#    define fuse_new 1024,33308
+#    define fuse_setup 1025,33347
+#    define fuse_teardown 1026,33390
+#    define fuse_operations 1027,33439
+#    define fuse_file_info 1028,33492
+#    define fuse_dirfil_t 1032,33650
+#    define __fuse_read_cmd 1033,33697
+#    define __fuse_process_cmd 1034,33739
+#    define __fuse_loop_mt 1035,33787
+#      define fuse_operations 1037,33863
+#      define fuse_main 1038,33917
+#      define fuse_new 1039,33959
+#      define __fuse_setup 1040,33999
+#      define __fuse_teardown 1041,34045
+#      define __fuse_exited 1042,34098
+#      define __fuse_set_getcontext_func 1043,34138
+#      define fuse_statfs 1045,34214
+#      define fuse_operations 1046,34260
+#      define fuse_main 1047,34314
+#      define fuse_new 1048,34356
+#      define FUSE_DEBUG 1049,34396
+
+/usr/include/fuse.h,0
