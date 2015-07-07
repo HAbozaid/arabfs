@@ -3,9 +3,13 @@ this is file sytem project with its al functionality youc can create file or dir
 create symlink and hardlink.
 
 this project wroking under any operating system support vfs like linux or ubuntu.
+Dependencies:
+1-gcc5
+2-fuse library
+3-linux
 
-this project compile under gcc 5.0  you must install it
-
-you must compile the files by type make in the terminal.
-then make the mount point by ./sfuse "the name of the folder".
-then test the opertation of the file system.
+to run arabfs: 
+1-type make in the terminal.
+2-create a new directory
+3-then make the mount point by ./sfuse "the name of the directory".
+4-test the opertation of the file system like mkdir and ln etc.
