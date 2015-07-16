@@ -2,7 +2,7 @@
 #include <fuse.h>
 #include <syslog.h>
 
-int sfs_release (const char *path, struct fuse_file_info *f)
+int afs_release (const char *path, struct fuse_file_info *f)
 {
     syslog (LOG_DEBUG, "release %s\n", path);
     int result=-ENOENT;

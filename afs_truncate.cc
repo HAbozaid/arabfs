@@ -2,7 +2,7 @@
 #include <fuse.h>
 #include <syslog.h>
 
-int sfs_truncate (const char *path, off_t size)
+int afs_truncate (const char *path, off_t size)
 {   
     std::lock_guard<std::mutex> guard{ROOT.mutex};
     int file_index=ROOT.find(path);

@@ -3,7 +3,7 @@
 #include <syslog.h>
 #include <unistd.h>
 
-int sfs_open (const char *path, struct fuse_file_info *f)
+int afs_open (const char *path, struct fuse_file_info *f)
 {
     syslog(LOG_DEBUG,"In OPEN \n");
     int file= ROOT.find(path);

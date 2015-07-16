@@ -4,7 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/container/static_vector.hpp>
 
-int sfs_getattr (const char *path, struct stat *stbuf)
+int afs_getattr (const char *path, struct stat *stbuf)
 {
     syslog(LOG_DEBUG,"getattr path=%s\n",path);
     int file_inode= hd.blocks[0].get<file_t>().find(path);

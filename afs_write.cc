@@ -7,7 +7,7 @@
 #include <algorithm>
 
 
-int sfs_write (const char UNUSED *path, const char  *buf, size_t  size, off_t  offset, struct fuse_file_info *f)
+int afs_write (const char UNUSED *path, const char  *buf, size_t  size, off_t  offset, struct fuse_file_info *f)
 {
     std::string temp;
     if(!f)

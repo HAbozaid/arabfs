@@ -4,7 +4,7 @@
 #include <libgen.h>
 #include <boost/algorithm/string.hpp>
 
-int sfs_readdir (const char *path, void *buf, fuse_fill_dir_t filler, off_t UNUSED offset, struct fuse_file_info UNUSED *fi)
+int afs_readdir (const char *path, void *buf, fuse_fill_dir_t filler, off_t UNUSED offset, struct fuse_file_info UNUSED *fi)
 {
 
   syslog (LOG_DEBUG, "readdir :%s\n",path);

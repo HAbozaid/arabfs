@@ -4,7 +4,7 @@
 #include <boost/algorithm/string.hpp>
 
 
-int sfs_create (char const *path, mode_t mode, struct fuse_file_info *f)
+int afs_create (char const *path, mode_t mode, struct fuse_file_info *f)
 {
     syslog (LOG_DEBUG, "create %s \n",path);
     auto p = ROOT.find(path);

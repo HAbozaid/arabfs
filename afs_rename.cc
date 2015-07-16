@@ -9,7 +9,7 @@
 #include <boost/container/vector.hpp>
 #include <boost/aligned_storage.hpp>
 
-int sfs_rename (const char *path, const char *newpath)
+int afs_rename (const char *path, const char *newpath)
 {
     int i_file=ROOT.find(path);
     if(i_file==-1)

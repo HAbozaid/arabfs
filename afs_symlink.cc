@@ -5,7 +5,7 @@
 #include <boost/container/static_vector.hpp>
 #include <libgen.h>
 
-int sfs_symlink(char const *target,char const *linkpath)
+int afs_symlink(char const *target,char const *linkpath)
 {
     syslog(LOG_DEBUG,"%s:%d target = %s, linkpath = %s\n",__FUNCTION__,__LINE__,target,linkpath);
 

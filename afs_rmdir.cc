@@ -4,7 +4,7 @@
 #include <libgen.h>
 #include <algorithm>
 
-int sfs_rmdir(const char *path)
+int afs_rmdir(const char *path)
 {
     syslog(LOG_DEBUG, "In RMDIR\n");
     char *pathd = strdup (path);

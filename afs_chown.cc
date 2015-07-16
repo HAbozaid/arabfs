@@ -2,7 +2,7 @@
 #include <fuse.h>
 #include <syslog.h>
 
-int sfs_chown (const char *path, uid_t uid, gid_t gid)
+int afs_chown (const char *path, uid_t uid, gid_t gid)
 {
     syslog(LOG_DEBUG,"chown");
     int index_file = ROOT.find(path);

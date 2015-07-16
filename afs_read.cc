@@ -8,7 +8,7 @@
 #include <boost/container/static_vector.hpp>
 
 
-int sfs_read (const char UNUSED *path, char *buf, size_t size, off_t offset, struct fuse_file_info *f)
+int afs_read (const char UNUSED *path, char *buf, size_t size, off_t offset, struct fuse_file_info *f)
 {
    int index=f->fh;
    // file_t file;

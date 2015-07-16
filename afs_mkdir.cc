@@ -4,7 +4,7 @@
 #include <libgen.h>
 #include <boost/algorithm/string.hpp>
 
-int  sfs_mkdir(const char *path , mode_t mode)
+int  afs_mkdir(const char *path , mode_t mode)
 {
     syslog(LOG_DEBUG, "In Mkdir\n");
     char *pathd = strdup (path);

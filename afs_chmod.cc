@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <syslog.h>
 
-int sfs_chmod (const char *path, mode_t mode)
+int afs_chmod (const char *path, mode_t mode)
 {
     int  index_file=ROOT.find(path);
     syslog(LOG_DEBUG,"In chmod \n");

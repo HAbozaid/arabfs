@@ -4,7 +4,7 @@
 #include <libgen.h>
 
 
-int sfs_link (const char *oldpath, const char *newpath)
+int afs_link (const char *oldpath, const char *newpath)
 {
     int file=ROOT.find(oldpath);
     if(file==-1)

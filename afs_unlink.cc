@@ -3,7 +3,7 @@
 #include <syslog.h>
 #include <libgen.h>
 
-int sfs_unlink (const char *path)
+int afs_unlink (const char *path)
 {
     syslog(LOG_DEBUG, "In Unlink\n");
     char *pathd = strdup (path);
