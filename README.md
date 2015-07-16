@@ -2,7 +2,7 @@
 this is file sytem project with its al functionality youc can create file or directories delete them.
 create symlink and hardlink.
 
-this project wroking under any operating system support vfs like linux or ubuntu.
+this project wroking under any operating system support vfs like linux or ubuntu(x 64).
 <br>
 Dependencies:<br>
 1-gcc5
